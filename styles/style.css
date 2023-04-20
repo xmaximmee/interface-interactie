@@ -7,14 +7,40 @@
   box-sizing:border-box;  
 }
 
+@font-face {
+  font-family:'superMario';
+  src: url(../fonts/webfontkit-20230420-060121/supermario256-webfont.woff) format('woff2'),
+       url(../fonts/webfontkit-20230420-060121/supermario256-webfont.woff2) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
   margin:0;
+  padding:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 255, 50%);
+
+  /* overflow:hidden; */
 }
+
+main{
+  /* background-size: 100vw auto; */
+  height: 100vw;
+  width: 400%;
+  background-image: url("../images/BACKGROUND2E_Tekengebied\ 1.png");
+  background-size: 100%;
+  position: relative;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
 
 button:not([disabled]) {
   cursor:pointer;
 }
-
 
 
 
@@ -29,8 +55,6 @@ button:not([disabled]) {
 
 
 
-
-
 /********************/
 /* ALGEMENE STYLING */
 /********************/
@@ -39,7 +63,201 @@ h1 {
   color:var(--color-headings);
 }
 
+h1{
+  font-family:'superMario';
+  color: rgb(253, 116, 235);
+  position: absolute;
+  font-size: 5em;
+  top: 50%;
+  left: 10%;
+}
 
-/* ... */
+
+/* grote wolk */
+.wolk{
+  position: fixed;
+  top:5em;
+  left:-26em;
+  animation: wolk 10s linear infinite;
+}
 
 
+@keyframes wolk {
+  0% {transform: translateX(0);}
+  100% {transform: translateX( calc(100vw + 26em) );}
+} 
+
+
+.circle {
+  width: 6em;
+  height: 6em;
+  background: whitesmoke;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle:nth-of-type(1){
+  top: 7em;
+  left: 3em;
+  /* background-color: green; */
+
+  }
+
+.circle:nth-of-type(2){
+  width: 10em;
+  height: 10em;
+  /* background: blue; */
+  left:8em;
+  top:5em;
+}
+
+.circle:nth-of-type(3){
+  width: 26em;
+  height: 5em;
+  /* background: purple; */
+  border-radius: 10em;
+  top: 10em;
+  
+}
+
+.circle:nth-of-type(4){
+  /* background: red; */
+  top: 7em;
+  left: 17em;
+}
+
+
+
+
+/* Kleine wolk */
+
+.wolkk{
+  position: relative;
+  top: 10em;
+  left: 0em;
+  animation: wolk 5s linear infinite;
+  background-color: red;
+}
+
+.circlek {
+  width: 3em;
+  height: 3em;
+  background: whitesmoke;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circlek:nth-of-type(1){
+  top: 8em;
+  left: 1em;
+  /* background-color: green; */
+  }
+
+.circlek:nth-of-type(2){
+  width: 5em;
+  height: 5em;
+  /* background: blue; */
+  left:3.5em;
+  top:7em;
+}
+
+.circlek:nth-of-type(3){
+  width: 12em;
+  height: 3em;
+  /* background: purple; */
+  border-radius: 10em;
+  top: 10em;
+}
+
+.circlek:nth-of-type(4){
+  /* background: red; */
+  top: 8em;
+  left: 8em;
+}
+
+.wolkk{
+  position: fixed;
+  top:10em;
+  left: -12em;
+  animation: wolkk 20s linear infinite;
+}
+
+@keyframes wolkk{
+  0% {transform: translateX(0);}
+  100% {transform: translateX( calc(100vw + 12em) );}
+} 
+
+/* section{
+  position: relative;
+  width: 100%;
+  height: 20%;
+  background-color: royalblue;
+  overflow: hidden;
+  bottom:0em;
+  left: 0em;
+} */
+
+
+
+/* list items */
+ol{
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  height: 100vw;
+  position: relative;
+}
+
+li:nth-of-type(1) >img{
+  /* background-color: red; */
+  width: 17em;
+  height: 20em;
+  margin: 0%;
+  margin-bottom: 0;
+  position: absolute;
+  left: 5%;
+  bottom: 11%;
+  animation-name: glow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes glow {
+  0%{
+    filter: drop-shadow(0 0 1em pink);
+  }
+  100%{
+    filter: drop-shadow(0 0 2em blue);
+  }
+}
+
+/* li:nth-of-type(1) > img:hover{
+  width: 10%;
+} */
+
+li:nth-of-type(2) >img{
+  /* background-color: red; */
+  margin: 0%;
+  width: 12em;
+  position: absolute;
+  left: 15%;
+  bottom:14%;
+}
+
+li:nth-of-type(3) >img{
+  /* background-color: red; */
+  margin: 0%;
+  position: absolute;
+  left: 33%;
+  bottom: 21%;
+}
+
+li:nth-of-type(4) >img{
+  /* background-color: red; */
+  margin: 0%;
+  position: absolute;
+  left: 40%;
+  bottom: 27%;
+}

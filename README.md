@@ -44,6 +44,9 @@ Blauw
 ## Voortgang/Feedback 1
 
 <details>
+  details
+  Feedbackpunten:
+
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
 
   ### Bevinding 1:
