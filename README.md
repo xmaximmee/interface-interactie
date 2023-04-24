@@ -46,8 +46,19 @@ Blauw
 <details>
   details
   Feedbackpunten:
+  -Ik vind dit een goed idee en een leuke vormgeving, wel kunnen de paddenstoelen ook bij bijvoorbeeld het onderwerp 'Mario' passen. Wellicht kan je nog iets extra's toevoege dat echt alleen bij Princess Pech hoort.
+
+  Het einde waarbij Peach met Mario eindigt is erg sterk!
+  - probeer de eilandjes misschien wat kleiner te maken
+  - je zou de eilandjes in de stijl van de peach kunnen doen
 
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  - Ik ga mijn paddenstoelen veranderen naar eilandjes omdat dit beter past bij peach.
+  - ik hou eerst mijn eilandjes zoals nu met gras maar als ik later tijd heb ga ik ze veranderen naar eilandjes met ijs of zand van de werelden van mario bros.
+  - als ik tijd heb lijkt mij het ook een leuk idee om de eilandjes te ontwerpen in de stijl van de peach van dat tijdperk
+  - ik ga het logo/de titel in de zelfde stijl doen als de titel van het spel Super Princess Peach.
+  - elementen die ik toevoeg hoe ik in de stijl van de eilandjes
+  - de eilandjes maak ik iets kleiner en beter op schaal
 
   ### Bevinding 1:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
@@ -76,7 +87,8 @@ Blauw
 ## Voortgang/Feedback 2
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Ik heb geleerd om een wolk te maken en te laten bewegen daarbij heb ik geleerd om mijn achtergrond er te zetten en het mogelijk te maken om horizontaal te scrollen. 
+  </summary>
   
   ### Bevinding 1:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
@@ -105,8 +117,9 @@ Blauw
 ## Voortgang/Feedback 3
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
-  
+  <summary> Ik heb uitleg gekregen hoe ik een smiley maak en heb ik mijn eerste paars peach's geplaatst en gepositioneerd in mijn website.</summary>
+ 
+
   ### Bevinding 1:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 

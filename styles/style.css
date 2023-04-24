@@ -21,20 +21,20 @@ body {
   padding:0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 255, 50%);
-
+  background-color: rgba(3, 198, 233, 0.5);
   /* overflow:hidden; */
 }
 
 main{
   /* background-size: 100vw auto; */
-  height: 100vw;
+  height: 100vH;
   width: 400%;
   background-image: url("../images/BACKGROUND2E_Tekengebied\ 1.png");
   background-size: 100%;
   position: relative;
   background-position: left bottom;
   background-repeat: no-repeat;
+  
 }
 
 
@@ -51,13 +51,17 @@ button:not([disabled]) {
 
 :root {
   --color-headings:crimson
+  --Grotetitel:rgb(253, 116, 235)
+  --popupbackground:rgb(218, 198, 143)
+  --color:pink
 }
-
 
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
+
+
 
 h1 {
   color:var(--color-headings);
@@ -65,12 +69,117 @@ h1 {
 
 h1{
   font-family:'superMario';
+  color: rgb(255, 225, 89);
+  position: absolute;
+  font-size: 1em;
+  top: 10%;
+  left: 6%;
+  rotate: -23deg;
+}
+
+h2{
+  font-family:'superMario';
   color: rgb(253, 116, 235);
   position: absolute;
-  font-size: 5em;
-  top: 50%;
-  left: 10%;
+  font-size: 3em;
+  top: 5%;
+  left: 6%;
+  rotate: -10deg;
+  text-align: center;
+  -webkit-text-stroke: 1px rgb(243, 4, 183);
+  text-shadow: 0px 0px 1em rgb(107, 2, 42);
 }
+
+
+h3{
+  font-family: 'superMario';
+  -webkit-text-stroke: 1px rgb(243, 40, 4);
+  color: rgb(236, 146, 42);
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .7em;
+}
+
+
+
+/* smiley */
+.smiley{
+  position: absolute;
+  bottom:35%;
+  width:9em;
+  aspect-ratio: 1/1;
+  /* background-color:pink; */
+  left: 1em;
+}
+
+.smiley div{
+  position: absolute;
+}
+
+.smiley div:nth-of-type(1),
+.smiley div:nth-of-type(2) {
+  width:5%;
+  aspect-ratio:1/2;
+  background-color:rgb(134, 89, 6);
+  border-radius:.5em;
+  top:3em;
+}
+
+.smiley div:nth-of-type(1) {
+  left:3em; 
+}
+.smiley div:nth-of-type(2){
+  right: 3.8em; 
+  /* background-color: red; */
+}
+
+.smiley div:nth-of-type(3){
+  width:2.5em;
+  height:1em;
+  left:2.8em;
+  top:50%;
+  border:solid .5em rgb(143, 94, 5);
+  border-width:0em .5em .5em .5em;
+  border-radius:1em;
+  border-radius:0 0 3em 3em;
+  animation-name: smileybewegen;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes smileybewegen{
+  0%{ 
+    height: .5em;
+  }
+  10%{
+    height:.25em;
+    transform:scaleY(1);
+  }
+  10.1% {
+    transform:scaleY(-1);
+    height:.25em;
+  }
+  20% {
+    height:1em;
+  }
+  30% {
+    transform:scaleY(-1);
+    height:.5em;
+  }
+  30.1% {
+    transform:scaleY(1);
+    height:.25em;
+  }
+  40%,
+  100%{
+    height:1em;
+  }
+}
+
 
 
 /* grote wolk */
@@ -136,7 +245,7 @@ h1{
   top: 10em;
   left: 0em;
   animation: wolk 5s linear infinite;
-  background-color: red;
+ 
 }
 
 .circlek {
@@ -187,15 +296,6 @@ h1{
   100% {transform: translateX( calc(100vw + 12em) );}
 } 
 
-/* section{
-  position: relative;
-  width: 100%;
-  height: 20%;
-  background-color: royalblue;
-  overflow: hidden;
-  bottom:0em;
-  left: 0em;
-} */
 
 
 
@@ -204,19 +304,28 @@ ol{
   list-style: none;
   margin: 0;
   width: 100%;
-  height: 100vw;
+  height: 100vh;
   position: relative;
 }
 
-li:nth-of-type(1) >img{
+button{
+  /* cursor: pointer; */
+  cursor: url(../images/mariohand.png);
+}
+
+li:nth-of-type(1) button >img{
   /* background-color: red; */
-  width: 17em;
-  height: 20em;
+  width: 5%;
+  height: 36%;
   margin: 0%;
   margin-bottom: 0;
   position: absolute;
   left: 5%;
-  bottom: 11%;
+  bottom: 23%;
+}
+
+li:nth-of-type(1) button >img:hover{
+  /* background-color: red; */
   animation-name: glow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -224,40 +333,94 @@ li:nth-of-type(1) >img{
   animation-timing-function: ease-in-out;
 }
 
-@keyframes glow {
+@keyframes glow{
   0%{
     filter: drop-shadow(0 0 1em pink);
   }
   100%{
-    filter: drop-shadow(0 0 2em blue);
+    filter: drop-shadow(0 0 2em whitesmoke);
   }
 }
 
-/* li:nth-of-type(1) > img:hover{
-  width: 10%;
-} */
-
-li:nth-of-type(2) >img{
-  /* background-color: red; */
-  margin: 0%;
-  width: 12em;
-  position: absolute;
-  left: 15%;
-  bottom:14%;
+li:nth-of-type(1) button >img:active{
+  width: 30em;
+  height: 30em;
 }
 
-li:nth-of-type(3) >img{
+
+li:nth-of-type(2) button >img{
   /* background-color: red; */
   margin: 0%;
+  width: 2.5%;
   position: absolute;
-  left: 33%;
-  bottom: 21%;
+  left: 15.3%;
+  bottom:25%
 }
 
-li:nth-of-type(4) >img{
+.blok img{
+   width: 1.9%;
+   height: 11%;
+   position: absolute;
+   left:15.7%;
+   bottom: 55%;
+}
+
+
+li:nth-of-type(3) button >img{
   /* background-color: red; */
   margin: 0%;
+  width: 2%;
+  position: absolute;
+  left: 29%;
+  bottom: 37%;
+}
+
+li:nth-of-type(4) button >img{
+  /* background-color: red; */
+  margin: 0%;
+  width: 2.5%;
   position: absolute;
   left: 40%;
-  bottom: 27%;
+  bottom: 49%;
+}
+
+img.bowser {
+  /* background-color: red; */
+  position: fixed;
+  display:block;
+  height: 30%;
+  width:auto;  
+  left: -15em;
+  animation: wolk 5s infinite 5s;
+  
+}
+
+@keyframes bowser{
+  0% {transform: translateX(0);}
+  100% {transform: translateX( calc(100vw + 10em) );}
+}
+
+
+#popup {
+  position: absolute;
+  width: 5%;
+  height: 39%;
+  left: 11%;
+  bottom:17%;
+  /* width: 10%;
+  height: 40%; */
+  /* top: 50%;
+  left: 50%; */
+  transform: translate(-50%, -50%);
+  background-color: rgb(218, 198, 143);
+  padding: 20px;
+  border: 5px solid rgb(180, 161, 108);
+  border-radius: 15%;
+}
+
+#close-popup{
+  position: absolute;
+  top:2%;
+  right:7%;
+  border-radius: 50%;
 }
