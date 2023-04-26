@@ -9,37 +9,54 @@
 
 @font-face {
   font-family:'superMario';
-  src: url(../fonts/webfontkit-20230420-060121/supermario256-webfont.woff) format('woff2'),
-       url(../fonts/webfontkit-20230420-060121/supermario256-webfont.woff2) format('woff');
+  src: url(../fonts/webfontkit-20230420-060121/supermario256-webfont.woff) format('woff'),
+       url(../fonts/webfontkit-20230420-060121/supermario256-webfont.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family:'digitalgame';
+  src: url(../fonts/webfontkit-20230424-045830/retro_gaming-webfont.woff) format('woff2'),
+       url(../fonts/webfontkit-20230424-045830/retro_gaming-webfont.woff2) format('woff2');
+  font-style: normal;
+  font-weight: lighter;
+
+}
 
 body {
   margin:0;
   padding:0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(3, 198, 233, 0.5);
-  /* overflow:hidden; */
+  animation: lucht 10s linear infinite;
+  background-color: #39c0ff;
+  background-size: 20em 20em;
+  /* background-image: repeating-linear-gradient(45deg, #0070cc 0px, #d7d9f8 30px, #0070b1 0, #b8b8dd 50%); */
+  /* BRON:https://www.magicpattern.design/tools/css-backgrounds */
 }
+
+@keyframes lucht {
+  0% {background-position: left;}
+  100% { background-position: right;}
+}
+
 
 main{
   /* background-size: 100vw auto; */
-  height: 100vH;
+  height: 100vh;
   width: 400%;
-  background-image: url("../images/BACKGROUND2E_Tekengebied\ 1.png");
-  background-size: 100%;
+  background-image: url("../images/bg.png");
+  background-size: 100% auto;
   position: relative;
-  background-position: left bottom;
+  background-position: 0em bottom;
   background-repeat: no-repeat;
   
 }
 
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: url("../images/mariohand.png") 0 0, auto;
 }
 
 
@@ -50,18 +67,23 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
-  --Grotetitel:rgb(253, 116, 235)
-  --popupbackground:rgb(218, 198, 143)
-  --color:pink
+  --color-headings:crimson;
+  --grotekop:rgb(255, 225, 89);
+  --bordergrotekop: rgb(255, 136, 0);
+  --subtitel:rgb(255, 225, 89);
+  --popupbackground:rgb(218, 198, 143);
+  --wolk: rgb(255, 255, 255);
+  --smiley: rgb(143, 94, 5);
+  --kleinekop: rgb(253, 116, 235);
+  --borderkleinekop: rgb(73, 3, 44);
 }
+
+
 
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
-
-
 
 h1 {
   color:var(--color-headings);
@@ -69,49 +91,61 @@ h1 {
 
 h1{
   font-family:'superMario';
-  color: rgb(255, 225, 89);
+  color: var(--kleinekop);
   position: absolute;
-  font-size: 1em;
-  top: 10%;
-  left: 6%;
+  font-size: 1vw;
+  bottom: 42vw;
+  left: 7%;
   rotate: -23deg;
+  -webkit-text-stroke: 1px var(--borderkleinekop);
 }
 
 h2{
   font-family:'superMario';
-  color: rgb(253, 116, 235);
+  color:var(--grotekop);
   position: absolute;
-  font-size: 3em;
-  top: 5%;
-  left: 6%;
+  font-size: 3vw;
+  bottom: 37vw;
+  left: 7%;
   rotate: -10deg;
   text-align: center;
-  -webkit-text-stroke: 1px rgb(243, 4, 183);
-  text-shadow: 0px 0px 1em rgb(107, 2, 42);
+  -webkit-text-stroke: 1px var(--bordergrotekop);
+  text-shadow: .1em .1em .1em var(--bordergrotekop), -.1em -.1em .1em var(--bordergrotekop);
 }
 
 
 h3{
   font-family: 'superMario';
-  -webkit-text-stroke: 1px rgb(243, 40, 4);
-  color: rgb(236, 146, 42);
+  -webkit-text-stroke: .07em rgb(243, 40, 4);
+  color: rgb(250, 192, 0);
+
 }
 
 p{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'digitalgame';
   font-size: .7em;
 }
+
+.cursor img{
+  position: absolute;
+  width: 10%;
+  appearance: none;
+  padding: 0%;
+  margin:0%;
+  cursor: url("../images/kleineMariohand.png"), 18 5 auto;
+}
+
+
 
 
 
 /* smiley */
 .smiley{
   position: absolute;
-  bottom:35%;
-  width:9em;
+  height: 6vw;
   aspect-ratio: 1/1;
-  /* background-color:pink; */
-  left: 1em;
+  left: .7%;
+  bottom:22.09vw;
 }
 
 .smiley div{
@@ -120,30 +154,29 @@ p{
 
 .smiley div:nth-of-type(1),
 .smiley div:nth-of-type(2) {
-  width:5%;
+  width:10%;
   aspect-ratio:1/2;
-  background-color:rgb(134, 89, 6);
-  border-radius:.5em;
-  top:3em;
+  background-color:var(--smiley);
+  border-radius:10em;
+  top:20%;
 }
 
 .smiley div:nth-of-type(1) {
-  left:3em; 
+  left:33%; 
 }
 .smiley div:nth-of-type(2){
-  right: 3.8em; 
-  /* background-color: red; */
+  right: 33%;
 }
 
 .smiley div:nth-of-type(3){
-  width:2.5em;
-  height:1em;
-  left:2.8em;
+  height:30%;
+  width:60%;
+  left:20%;
   top:50%;
-  border:solid .5em rgb(143, 94, 5);
-  border-width:0em .5em .5em .5em;
-  border-radius:1em;
-  border-radius:0 0 3em 3em;
+  border-style:solid;
+  border-color:var(--smiley);
+  border-width:0em .5vw .5vw .5vw;
+  border-radius:0 0 100em 100em;
   animation-name: smileybewegen;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -153,32 +186,34 @@ p{
 
 @keyframes smileybewegen{
   0%{ 
-    height: .5em;
+    height: 30%;
   }
   10%{
-    height:.25em;
+    height:9%;
     transform:scaleY(1);
   }
   10.1% {
     transform:scaleY(-1);
-    height:.25em;
+    height:9%;
   }
   20% {
-    height:1em;
+    transform:scaleY(-1);
+    height:30%;
   }
   30% {
     transform:scaleY(-1);
-    height:.5em;
+    height:9%;
   }
   30.1% {
     transform:scaleY(1);
-    height:.25em;
+    height:9%;
   }
   40%,
   100%{
-    height:1em;
+    height:30%;
   }
 }
+
 
 
 
@@ -200,7 +235,7 @@ p{
 .circle {
   width: 6em;
   height: 6em;
-  background: whitesmoke;
+  background: var(--wolk);
   border-radius: 50%;
   position: absolute;
 }
@@ -239,7 +274,6 @@ p{
 
 
 /* Kleine wolk */
-
 .wolkk{
   position: relative;
   top: 10em;
@@ -251,7 +285,7 @@ p{
 .circlek {
   width: 3em;
   height: 3em;
-  background: whitesmoke;
+  background: var(--wolk);
   border-radius: 50%;
   position: absolute;
 }
@@ -297,6 +331,66 @@ p{
 } 
 
 
+/*  */
+
+.watercontainer{
+  position: fixed;
+  width: 120%;
+  height: 20%;
+  background-color: rgb(0, 4, 255);
+  bottom: 0;
+  z-index: 1;
+  opacity: 60%;
+  background-position: 0;
+  animation: water 2s linear infinite;
+
+  --mask:
+  radial-gradient(77.42px at 50% 108.00px,#000 99%,#0000 101%) calc(50% - 90px) 0/180px 100%,
+  radial-gradient(77.42px at 50% -63px,#0000 99%,#000 101%) 50% 45px/180px 100% repeat-x;
+  -webkit-mask: var(--mask);
+        mask: var(--mask);
+            /* BRON https://css-generators.com/wavy-shapes/ */
+}
+
+@keyframes water{
+  0% {left: -10%; bottom:-1px;}
+  25% {left:-5%; bottom:-10px;}
+  50% {left:0%; bottom:-1px;}
+  100% {left: -10%; bottom:-1px}
+}
+
+.watercontainer2{
+  position: fixed;
+  width: 120%;
+  height: 20%;
+  background-color: blue;
+  bottom: 0;
+  z-index: 1;
+  opacity: 60%;
+  background-position: 0;
+  animation: water2 2s linear infinite;
+
+  --mask:
+  radial-gradient(77.42px at 50% 108.00px,#000 99%,#0000 101%) calc(50% - 90px) 0/180px 100%,
+  radial-gradient(77.42px at 50% -63px,#0000 99%,#000 101%) 50% 45px/180px 100% repeat-x;
+-webkit-mask: var(--mask);
+        mask: var(--mask);
+            /* BRON https://css-generators.com/wavy-shapes/ */
+}
+
+@keyframes water2{
+  0%{ left: 0%; bottom:-7px;}
+
+  50%{ left:-5%; bottom: 0px;}
+
+  100%{ left: 0%; bottom:-7px;}
+  }
+
+
+/* @keyframes water{
+  0%{ background-position: -2em;}
+100% {background-position: 2em;}
+} */
 
 
 /* list items */
@@ -308,119 +402,325 @@ ol{
   position: relative;
 }
 
-button{
-  /* cursor: pointer; */
-  cursor: url(../images/mariohand.png);
-}
 
-li:nth-of-type(1) button >img{
-  /* background-color: red; */
-  width: 5%;
-  height: 36%;
-  margin: 0%;
-  margin-bottom: 0;
-  position: absolute;
-  left: 5%;
-  bottom: 23%;
-}
-
-li:nth-of-type(1) button >img:hover{
-  /* background-color: red; */
+ol li>button{
   animation-name: glow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
-
+/* glow voor alle peaches */
 @keyframes glow{
   0%{
-    filter: drop-shadow(0 0 1em pink);
+    height: 13vw; 
   }
   100%{
-    filter: drop-shadow(0 0 2em whitesmoke);
+    height: 12.8vw;
+    filter: 
+    drop-shadow(5px 5px 5px var(--wolk))
+    drop-shadow(-5px -5px 5px var(--wolk));
   }
 }
 
-li:nth-of-type(1) button >img:active{
-  width: 30em;
-  height: 30em;
-}
-
-
-li:nth-of-type(2) button >img{
-  /* background-color: red; */
-  margin: 0%;
-  width: 2.5%;
+/* peach 1 */
+ol li:nth-of-type(1)>button{
   position: absolute;
-  left: 15.3%;
-  bottom:25%
+  height: 13vw;
+  left: 5%;
+  bottom: 16vw;
+  padding:0;
+
+  appearance: none;
+  background: none;
+  border:none;
 }
 
-.blok img{
-   width: 1.9%;
-   height: 11%;
-   position: absolute;
-   left:15.7%;
-   bottom: 55%;
+
+li:nth-of-type(1) button >img{
+  display:block;
+  height:100%;
+  width: auto;
 }
 
+
+
+/* peach 2 met blok */
+li:nth-of-type(2) button{
+  /* background-color: red; */
+  position: absolute;
+  height: 13vw;
+  bottom:15vw;
+  left: 15.7%;
+  padding: 0;
+
+  appearance: none;
+  background: none;
+  border:none;
+}
+
+/* peach */
+li:nth-of-type(2) button > img{
+  /* background-color: red; */
+  width:auto;
+  height: 100%;
+  display: block;
+}
+
+li:nth-of-type(2) button.spring >img  {
+  animation-name: peach2jump;
+  animation-duration:.5s;
+}
+
+@keyframes peach2jump{
+  0% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translateY(-5vw);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+li:nth-of-type(2) .blok {
+  position: absolute;
+  left:15.8%;
+  bottom:35vw;
+  height:6vw;
+}
+
+li:nth-of-type(2) .blok.spring {
+  animation-name: peach2jump;
+  animation-duration:.3s;
+  animation-delay: .25s;
+}
+
+
+
+/* het blokje */
+.blok img:nth-of-type(1){
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: 100%;
+}
+
+/* het muntje */
+.blok img:nth-of-type(2){
+  position: absolute;
+  left: 8%;
+  bottom: 0;
+  width: auto;
+  height: 100%;
+}
+
+.blok.spring img:nth-of-type(2){
+  animation-name: muntje2;
+  animation-duration:.5s;
+  animation-delay: .4s;
+}
+
+@keyframes muntje2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    transform: translateY(-300%) rotateY(2turn);
+  }
+}
+ /* einde peach 2 met blok */
+
+
+
+
+
+li:nth-of-type(3) button{
+  position: absolute;
+  height: 13vw;
+  bottom: 20vw;
+  left: 29%;
+  padding: 0;
+
+  appearance: none;
+  background: none;
+  border:none;
+}
 
 li:nth-of-type(3) button >img{
-  /* background-color: red; */
-  margin: 0%;
-  width: 2%;
+  height: 100%;
+  width: auto;
+  display:block;
+}
+
+
+
+li:nth-of-type(4) button{
   position: absolute;
-  left: 29%;
-  bottom: 37%;
+  width: auto;
+  height: 13vw;
+  left: 45%;
+  bottom: 25vw;
+  padding: 0;
+
+  appearance: none;
+  background: none;
+  border:none;
 }
 
 li:nth-of-type(4) button >img{
-  /* background-color: red; */
-  margin: 0%;
-  width: 2.5%;
-  position: absolute;
-  left: 40%;
-  bottom: 49%;
+  width: auto;
+  height: 100%;
+  position: block;
 }
 
-img.bowser {
-  /* background-color: red; */
+li:nth-of-type(5) button{
+  position: absolute;
+  width: auto;
+  height: 13vw;
+  left: 55%;
+  bottom: 20vw;
+  padding:0;
+
+  appearance: none;
+  background: none;
+  border:none;
+}
+
+li:nth-of-type(5) button >img{
+  width: auto;
+  height: 100%;
+  position: block;
+}
+
+
+.bowser img{
   position: fixed;
   display:block;
   height: 30%;
   width:auto;  
-  left: -15em;
-  animation: wolk 5s infinite 5s;
   
+  left: -15em;
+  animation: wolk 10s infinite 10s;
 }
 
 @keyframes bowser{
-  0% {transform: translateX(0);}
-  100% {transform: translateX( calc(100vw + 10em) );}
+  0% {transform: translateX( calc(100vw + 10em) );}
+  100% {transform: translateX(0);} 
 }
 
-
-#popup {
+.popup {
+  display: none;
   position: absolute;
-  width: 5%;
-  height: 39%;
-  left: 11%;
-  bottom:17%;
-  /* width: 10%;
-  height: 40%; */
-  /* top: 50%;
-  left: 50%; */
-  transform: translate(-50%, -50%);
-  background-color: rgb(218, 198, 143);
   padding: 20px;
-  border: 5px solid rgb(180, 161, 108);
-  border-radius: 15%;
+  background-color: rgb(189, 100, 40);
+  border-radius: 5%;
 }
 
-#close-popup{
-  position: absolute;
-  top:2%;
-  right:7%;
+.popup.show {
+  display:block;
+}
+
+.popup .close-button {
   border-radius: 50%;
+  background-color: rgb(187, 186, 185);
+  border-color: rgb(83, 74, 74);
+  z-index: 100;
+
+  width:2em;
+  height:2em;
+  margin:0;
+  top: 2%;
+}
+
+
+#popup1 {
+  /* code voor soepelere transitie */
+  /* display: block;
+  opacity: 0.1;
+  inset: 0;
+  pointer-events: none;
+  transition: 1s; */
+
+  width: 5%;
+  height: auto;
+  bottom:18vw;
+  left: 7%; 
+}
+#close-popup1{
+  left:84%;
+}
+
+/* #popup1[open]{
+  opacity: 1;
+  pointer-events: all;
+} */
+
+#popup2 {
+  width: 6%;
+  height: auto;
+  bottom:16.5vw;
+  left: 18%; 
+}
+#close-popup2{
+  left:84%;
+}
+
+#popup3{
+  width: 6%;
+  height: auto;
+  bottom:23vw;
+  left: 31.5%; 
+}
+#close-popup3{
+  left:84%;
+}
+
+#popup4{
+  width: 6%;
+  height: auto;
+  bottom:27.5vw;
+  left: 39%; 
+}
+#close-popup4{
+  left:84%;
+}
+
+#popup5{
+  /* display: block; */
+  width: 5%;
+  height: auto;
+  bottom:23.5vw;
+  left: 58%; 
+}
+#close-popup5{
+  left:84%;
+}
+
+
+
+
+/* states voor alles peaches */
+ol li>button:hover{
+  animation: none;
+  height: 13.5vw;
+}
+
+ol li>button:active{
+  animation: none;
+  height: 11.5vw;
+}
+
+ol li>button:focus{
+  animation: none;
+  filter: drop-shadow(0 0 1em rgb(226, 186, 226));
+  /* background-color: rgb(226, 186, 226); */
+  
 }
