@@ -28,9 +28,11 @@ body {
   margin:0;
   padding:0;
   width: 100vw;
+  /* 100% van de viewport;  De viewport is het zichtbare gebied van een webpagina, 
+  waarin de inhoud wordt weergegeven.*/
   height: 100vh;
   animation: lucht 10s linear infinite;
-  background-color: #39c0ff;
+  background-color: var(--backgroundcolor);
   background-size: 20em 20em;
   /* background-image: repeating-linear-gradient(45deg, #0070cc 0px, #d7d9f8 30px, #0070b1 0, #b8b8dd 50%); */
   /* BRON:https://www.magicpattern.design/tools/css-backgrounds */
@@ -43,15 +45,16 @@ body {
 
 
 main{
-  /* background-size: 100vw auto; */
   height: 100vh;
-  width: 400%;
-  background-image: url("../images/bg.png");
+  /* Door het gebruik van "vh" kan ervoor gezorgd worden dat deze elementen zich aanpassen 
+  aan de grootte van het scherm */
+  /* !!het is een eenheid die afhankelijk is van de viewport!! :het zichtbare gebied van een webpagina, */
+  width: 300%;
+  background-image: url("../images/bg2nieuw.png");
   background-size: 100% auto;
   position: relative;
   background-position: 0em bottom;
   background-repeat: no-repeat;
-  
 }
 
 
@@ -59,72 +62,6 @@ button:not([disabled]) {
   cursor: url("../images/mariohand.png") 0 0, auto;
 }
 
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-
-:root {
-  --color-headings:crimson;
-  --grotekop:rgb(255, 225, 89);
-  --bordergrotekop: rgb(255, 136, 0);
-  --subtitel:rgb(255, 225, 89);
-  --popupbackground:rgb(218, 198, 143);
-  --wolk: rgb(255, 255, 255);
-  --smiley: rgb(143, 94, 5);
-  --kleinekop: rgb(253, 116, 235);
-  --borderkleinekop: rgb(73, 3, 44);
-}
-
-
-
-
-/********************/
-/* ALGEMENE STYLING */
-/********************/
-
-h1 {
-  color:var(--color-headings);
-}
-
-h1{
-  font-family:'superMario';
-  color: var(--kleinekop);
-  position: absolute;
-  font-size: 1vw;
-  bottom: 42vw;
-  left: 7%;
-  rotate: -23deg;
-  -webkit-text-stroke: 1px var(--borderkleinekop);
-}
-
-h2{
-  font-family:'superMario';
-  color:var(--grotekop);
-  position: absolute;
-  font-size: 3vw;
-  bottom: 37vw;
-  left: 7%;
-  rotate: -10deg;
-  text-align: center;
-  -webkit-text-stroke: 1px var(--bordergrotekop);
-  text-shadow: .1em .1em .1em var(--bordergrotekop), -.1em -.1em .1em var(--bordergrotekop);
-}
-
-
-h3{
-  font-family: 'superMario';
-  -webkit-text-stroke: .07em rgb(243, 40, 4);
-  color: rgb(250, 192, 0);
-
-}
-
-p{
-  font-family: 'digitalgame';
-  font-size: .7em;
-}
 
 .cursor img{
   position: absolute;
@@ -137,15 +74,130 @@ p{
 
 
 
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --backgroundcolor: rgb(72, 202, 253);
+  --grotekop:rgb(255, 225, 89);
+  --bordergrotekop: rgb(255, 136, 0);
+  --subtitel:rgb(255, 225, 89);
+  --jaargetallen: rgb(250, 192, 0);
+  --borderjaargetallen: .07em rgb(243, 40, 4);
+  --popupbackground:rgb(218, 198, 143);
+  --wolk: rgb(255, 255, 255);
+  --smiley: rgb(143, 94, 5);
+  --kleinekop: rgb(253, 116, 235);
+  --borderkleinekop: rgb(73, 3, 44);
+  --titelshadow: rgb(21, 72, 180);
+  --tabcolor:  rgb(226, 186, 226);
+  --waterdonker: rgb(24, 0, 161);
+  --waterlicht:  rgb(31, 126, 189);
+  --paragraaftekst: rgb(0, 0, 0);
+  --tekstwolk:  rgb(206, 188, 176);
+  --background-popups:  rgb(189, 100, 40);
+  --background-popupsclose: rgb(187, 186, 185);
+  --headerfont: 'superMario', Arial, Helvetica, sans-serif;
+  --popuptekst:'digitalgame' , Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+  --backgroundcolor: rgb(30, 80, 146);
+  --wolk: rgb(132, 145, 182);
+  --titelshadow:rgb(124, 143, 184);
+  --tabcolor:  rgb(151, 39, 151);
+  --background-popups:  rgb(112, 52, 12);
+  --paragraaftekst: rgb(228, 220, 220);
+  --tekstwolk:  rgb(126, 86, 59);
+  }
+}
 
 
-/* smiley */
+
+/********************/
+/* HEADER STYLING */
+/********************/
+h1{
+  color:var(--color-headings);
+  font-family: var(--headerfont);
+  color: var(--kleinekop);
+  position: absolute;
+  font-size: 1vw;
+  rotate: -23deg;
+  -webkit-text-stroke: 1px var(--borderkleinekop);
+  text-shadow:  .3em .3em .2em var(--titelshadow);
+  z-index: 1;
+}
+
+h1:nth-of-type(1){
+  bottom: 44vw;
+  left: 25.5%;
+}
+h1:nth-of-type(2){
+  bottom: 43vw;
+  left: 25.5%;
+}
+
+h2{
+  z-index: 1;
+  font-family: var(--headerfont);
+  color:var(--grotekop);
+  position: absolute;
+  font-size: 3vw;
+
+  rotate: -10deg;
+  text-align: center;
+  -webkit-text-stroke: 3px var(--bordergrotekop);
+  text-shadow: .2em .2em .2em var(--titelshadow), -.2em -.2em .2em var(--titelshadow);
+}
+
+
+h2:nth-of-type(1){
+  bottom: 42vw;
+  left: 36%;
+}
+h2:nth-of-type(2){
+  bottom: 38vw;
+  left: 27%;
+}
+
+
+h3{
+  font-family: var(--headerfont);
+  -webkit-text-stroke: var(--borderjaargetallen);
+  color: var(--jaargetallen);
+}
+
+h4{
+  color: var(--paragraaftekst);
+  font-size: .8vw;
+  font-family: var(--headerfont);
+  font-weight: lighter;
+}
+
+p{
+  font-family: var(--popuptekst);
+  font-size: .7em;
+  color: var(--paragraaftekst);
+}
+
+
+
+
+
+
+
+
+
+/* SMILEY OP DE BOOM */
 .smiley{
   position: absolute;
   height: 6vw;
   aspect-ratio: 1/1;
   left: .7%;
-  bottom:22.09vw;
+  bottom:18.5vw;
 }
 
 .smiley div{
@@ -191,10 +243,12 @@ p{
   10%{
     height:9%;
     transform:scaleY(1);
+  /* je voegt scaleY(1) zodat de lijn niet vervormt */
   }
   10.1% {
     transform:scaleY(-1);
     height:9%;
+     /*  de balk draait 180 graden en verkleint de hoogte weer tot 9%.*/
   }
   20% {
     transform:scaleY(-1);
@@ -217,7 +271,7 @@ p{
 
 
 
-/* grote wolk */
+/* GROTE WOLK*/
 .wolk{
   position: fixed;
   top:5em;
@@ -225,12 +279,10 @@ p{
   animation: wolk 10s linear infinite;
 }
 
-
 @keyframes wolk {
   0% {transform: translateX(0);}
   100% {transform: translateX( calc(100vw + 26em) );}
 } 
-
 
 .circle {
   width: 6em;
@@ -243,14 +295,11 @@ p{
 .circle:nth-of-type(1){
   top: 7em;
   left: 3em;
-  /* background-color: green; */
-
   }
 
 .circle:nth-of-type(2){
   width: 10em;
   height: 10em;
-  /* background: blue; */
   left:8em;
   top:5em;
 }
@@ -258,14 +307,12 @@ p{
 .circle:nth-of-type(3){
   width: 26em;
   height: 5em;
-  /* background: purple; */
   border-radius: 10em;
   top: 10em;
   
 }
 
 .circle:nth-of-type(4){
-  /* background: red; */
   top: 7em;
   left: 17em;
 }
@@ -273,13 +320,12 @@ p{
 
 
 
-/* Kleine wolk */
+/* KLEINE WOLK*/
 .wolkk{
   position: relative;
   top: 10em;
   left: 0em;
   animation: wolk 5s linear infinite;
- 
 }
 
 .circlek {
@@ -293,13 +339,11 @@ p{
 .circlek:nth-of-type(1){
   top: 8em;
   left: 1em;
-  /* background-color: green; */
   }
 
 .circlek:nth-of-type(2){
   width: 5em;
   height: 5em;
-  /* background: blue; */
   left:3.5em;
   top:7em;
 }
@@ -307,13 +351,11 @@ p{
 .circlek:nth-of-type(3){
   width: 12em;
   height: 3em;
-  /* background: purple; */
   border-radius: 10em;
   top: 10em;
 }
 
 .circlek:nth-of-type(4){
-  /* background: red; */
   top: 8em;
   left: 8em;
 }
@@ -331,13 +373,20 @@ p{
 } 
 
 
-/*  */
 
+
+
+
+
+
+
+
+/* WATER */
 .watercontainer{
   position: fixed;
   width: 120%;
   height: 20%;
-  background-color: rgb(0, 4, 255);
+  background-color: var(--waterdonker);
   bottom: 0;
   z-index: 1;
   opacity: 60%;
@@ -363,7 +412,7 @@ p{
   position: fixed;
   width: 120%;
   height: 20%;
-  background-color: blue;
+  background-color: var(--waterlicht);
   bottom: 0;
   z-index: 1;
   opacity: 60%;
@@ -387,29 +436,30 @@ p{
   }
 
 
-/* @keyframes water{
-  0%{ background-position: -2em;}
-100% {background-position: 2em;}
-} */
 
 
-/* list items */
+
+/* LIST ITEMS*/
+
+/* Algemene styling */
 ol{
   list-style: none;
   margin: 0;
   width: 100%;
   height: 100vh;
   position: relative;
+  /* relative: andere elementen op de pagina worden niet beïnvloed door de positie van het element */
 }
 
-
-ol li>button{
+ol li > button:nth-of-type(1){
+  border: none;
   animation-name: glow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
+
 /* glow voor alle peaches */
 @keyframes glow{
   0%{
@@ -423,12 +473,17 @@ ol li>button{
   }
 }
 
+
+
+
+
+
 /* peach 1 */
-ol li:nth-of-type(1)>button{
+ol li:nth-of-type(1) > button {
   position: absolute;
   height: 13vw;
   left: 5%;
-  bottom: 16vw;
+  bottom: 14vw;
   padding:0;
 
   appearance: none;
@@ -436,22 +491,28 @@ ol li:nth-of-type(1)>button{
   border:none;
 }
 
-
-li:nth-of-type(1) button >img{
+li:nth-of-type(1) > button img{
   display:block;
+  /* block: dat ze elk hun eigen regel in beslag nemen en dat er 
+  geen andere elementen naast of bovenop geplaatst kunnen worden. */
   height:100%;
   width: auto;
 }
 
 
 
+
+
+
+
+
 /* peach 2 met blok */
-li:nth-of-type(2) button{
+li:nth-of-type(2) > button:nth-of-type(1){
   /* background-color: red; */
   position: absolute;
   height: 13vw;
-  bottom:15vw;
-  left: 15.7%;
+  bottom: 13vw;
+  left: 19%;
   padding: 0;
 
   appearance: none;
@@ -459,17 +520,19 @@ li:nth-of-type(2) button{
   border:none;
 }
 
-/* peach */
-li:nth-of-type(2) button > img{
+/* PEACH 2*/
+li:nth-of-type(2) > button img{
   /* background-color: red; */
   width:auto;
   height: 100%;
   display: block;
 }
 
-li:nth-of-type(2) button.spring >img  {
+/* in de javascript roep je de klas spring aan met addclastlist*/
+li:nth-of-type(2) > button.spring {
   animation-name: peach2jump;
   animation-duration:.5s;
+  animation-iteration-count: 1;
 }
 
 @keyframes peach2jump{
@@ -478,7 +541,7 @@ li:nth-of-type(2) button.spring >img  {
     animation-timing-function: ease-out;
   }
   50% {
-    transform: translateY(-5vw);
+    transform: translateY(-9vw);
     animation-timing-function: ease-in;
   }
   100% {
@@ -488,7 +551,7 @@ li:nth-of-type(2) button.spring >img  {
 
 li:nth-of-type(2) .blok {
   position: absolute;
-  left:15.8%;
+  left:19%;
   bottom:35vw;
   height:6vw;
 }
@@ -542,11 +605,12 @@ li:nth-of-type(2) .blok.spring {
 
 
 
-li:nth-of-type(3) button{
+/* PEACH 3 */
+li:nth-of-type(3) > button:nth-of-type(1){
   position: absolute;
   height: 13vw;
-  bottom: 20vw;
-  left: 29%;
+  bottom: 18vw;
+  left: 35%;
   padding: 0;
 
   appearance: none;
@@ -554,7 +618,7 @@ li:nth-of-type(3) button{
   border:none;
 }
 
-li:nth-of-type(3) button >img{
+li:nth-of-type(3) > button:nth-of-type(1) img{
   height: 100%;
   width: auto;
   display:block;
@@ -562,12 +626,15 @@ li:nth-of-type(3) button >img{
 
 
 
-li:nth-of-type(4) button{
+
+
+/* PEACH 4 */
+li:nth-of-type(4) > button:nth-of-type(1){
   position: absolute;
   width: auto;
   height: 13vw;
-  left: 45%;
-  bottom: 25vw;
+  left: 50%;
+  bottom: 22vw;
   padding: 0;
 
   appearance: none;
@@ -575,18 +642,24 @@ li:nth-of-type(4) button{
   border:none;
 }
 
-li:nth-of-type(4) button >img{
+li:nth-of-type(4) > button:nth-of-type(1) > img{
   width: auto;
   height: 100%;
   position: block;
 }
 
-li:nth-of-type(5) button{
+
+
+
+
+
+/* PEACH 5 */
+li:nth-of-type(5) > button:nth-of-type(1){
   position: absolute;
   width: auto;
   height: 13vw;
-  left: 55%;
-  bottom: 20vw;
+  left: 71.5%;
+  bottom: 18vw;
   padding:0;
 
   appearance: none;
@@ -594,19 +667,131 @@ li:nth-of-type(5) button{
   border:none;
 }
 
-li:nth-of-type(5) button >img{
+/* > en nth of type omdat:  >voor de button en nth voor ook de img*/
+li:nth-of-type(5) > button:nth-of-type(1) > img{
   width: auto;
   height: 100%;
   position: block;
 }
 
 
+
+
+
+/* TOAD */
+button.toad {
+  border:none;
+  position: absolute;
+  left: 68.5%;
+  bottom: 18vw;
+  padding:0;
+  background:none;
+}
+
+.toad > img{
+  /* background-color: red; */
+  height:15vw;
+  width: auto;
+
+  z-index: 1;
+  animation-name: toadgrow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+
+/* grow toad */
+@keyframes toadgrow{
+  0%{
+    height: 6vw; 
+  }
+  100%{
+    height: 6.1vw;
+  }
+}
+
+/* verschillende states */
+.toad > img:hover{
+  height:7vw;
+  width:auto;
+  animation: none;  
+}
+
+.toad > img:active{
+  height:5vw;
+  width:auto;
+  animation: none;
+}
+
+button.toad:focus-visible{
+  animation: none;
+  outline: none;
+  padding: 1em;
+  background-color: var( --tabcolor);
+  border-radius: 50%;
+}
+
+
+
+/* tekst wolkje */
+button.toad div {
+  position: absolute;
+  background-color: var(--tekstwolk);
+  padding:.1em .1em .1em .1em;
+  border-radius: 10px;
+  width: 6.3vw;
+  height:3.5vw;
+  left:58%;
+  bottom:8vw;
+  animation-name: tekstwolk;
+  animation-duration: 4s;
+  animation-delay: 2;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tekstwolk{
+  0% { opacity: 0;}
+  50% {opacity: 100%; rotate: 10deg;}
+  60% {opacity: 100%; rotate: 10deg;}
+  100% {opacity: 0%; rotate: 0deg;}
+}
+
+.toad div:before {
+  content: "";
+  /* je zet hier lege content op de pagina die een hoogte en breedte mee krijgt en een background color om het driehoekje bij de tekst wolk te maken */
+  position: absolute;
+  bottom: -.7vw;
+  left: .8vw;
+
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+  border-color: var(--tekstwolk) transparent var(--tekstwolk) transparent;
+}
+
+.toad div h4{
+  position: abosulte;
+  text-align: center;
+  padding: .1em;
+}
+/* BRON:CHATGTP */
+
+
+
+
+
+
+
+
+
+/* BOWSER */
 .bowser img{
   position: fixed;
   display:block;
   height: 30%;
   width:auto;  
-  
   left: -15em;
   animation: wolk 10s infinite 10s;
 }
@@ -616,12 +801,21 @@ li:nth-of-type(5) button >img{
   100% {transform: translateX(0);} 
 }
 
+
+
+
+
+
+/* POP-UP PEACHES */
+
+/* Algemene styling */
 .popup {
   display: none;
   position: absolute;
   padding: 20px;
-  background-color: rgb(189, 100, 40);
+  background-color: var(--background-popups);
   border-radius: 5%;
+  z-index: 1;
 }
 
 .popup.show {
@@ -629,11 +823,13 @@ li:nth-of-type(5) button >img{
 }
 
 .popup .close-button {
+  position: absolute;
+  display: block;
+  border:none;
   border-radius: 50%;
-  background-color: rgb(187, 186, 185);
-  border-color: rgb(83, 74, 74);
+  background-color: var(--background-popupsclose);
+  /* border-color:rgb(165, 165, 165); */
   z-index: 100;
-
   width:2em;
   height:2em;
   margin:0;
@@ -641,86 +837,81 @@ li:nth-of-type(5) button >img{
 }
 
 
-#popup1 {
-  /* code voor soepelere transitie */
-  /* display: block;
-  opacity: 0.1;
-  inset: 0;
-  pointer-events: none;
-  transition: 1s; */
 
-  width: 5%;
+
+/* popup 1  */
+#popup1 {
+  width: 16em;    /* Em ipv vw om het leesbaar te houden */
   height: auto;
   bottom:18vw;
-  left: 7%; 
+  left: 8%; 
 }
 #close-popup1{
   left:84%;
 }
 
-/* #popup1[open]{
-  opacity: 1;
-  pointer-events: all;
-} */
-
+/* popup 2  */
 #popup2 {
-  width: 6%;
+  width: 16em;
   height: auto;
   bottom:16.5vw;
-  left: 18%; 
+  left: 22%; 
 }
 #close-popup2{
   left:84%;
-}
+} 
 
+/* popup 3  */
 #popup3{
-  width: 6%;
+  width: 16em;
   height: auto;
   bottom:23vw;
-  left: 31.5%; 
+  left: 38%; 
 }
 #close-popup3{
   left:84%;
-}
-
+} 
+ 
+/* popup 4  */
 #popup4{
-  width: 6%;
+  width: 20em;
   height: auto;
   bottom:27.5vw;
-  left: 39%; 
+  left: 53%; 
 }
-#close-popup4{
-  left:84%;
-}
+button#close-popup4{
+  left:87%;
+} 
 
+/* popup 5  */
 #popup5{
-  /* display: block; */
-  width: 5%;
+  width: 16em;
   height: auto;
   bottom:23.5vw;
-  left: 58%; 
+  left: 75%; 
 }
 #close-popup5{
-  left:84%;
-}
+  left:85%;
+}  
 
 
 
 
 /* states voor alles peaches */
-ol li>button:hover{
+ol li button:nth-of-type(1) > img:hover{
+  height: 14vw;
   animation: none;
-  height: 13.5vw;
 }
 
-ol li>button:active{
+ol li >  button:nth-of-type(1) > img:active{
   animation: none;
-  height: 11.5vw;
+  height: 12vw;
 }
 
-ol li>button:focus{
+ol li button:nth-of-type(1):focus-visible{
   animation: none;
-  filter: drop-shadow(0 0 1em rgb(226, 186, 226));
-  /* background-color: rgb(226, 186, 226); */
-  
+  outline: none;
+  padding: 1em;
+  background-color: var( --tabcolor);
+  border-radius: 50%;
 }
